@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-body text-metro-charcoal bg-white antialiased;
+  }
+
+  ::selection {
+    @apply bg-metro-red text-white;
+  }
+}
+
+@layer components {
+  .section-label {
+    @apply font-heading text-xs font-semibold tracking-[0.25em] uppercase text-metro-red;
+  }
+
+  .section-heading {
+    @apply font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium uppercase tracking-wide text-metro-navy leading-[1.1];
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 bg-metro-red text-white font-heading text-xs font-semibold tracking-[0.2em] uppercase px-8 py-4 transition-all duration-300 hover:bg-[#c91e2a] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-metro-red;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 border border-white/80 text-white font-heading text-xs font-semibold tracking-[0.2em] uppercase px-8 py-4 transition-all duration-300 hover:bg-white hover:text-metro-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white;
+  }
+
+  .btn-outline-navy {
+    @apply inline-flex items-center justify-center gap-2 border border-metro-navy text-metro-navy font-heading text-xs font-semibold tracking-[0.2em] uppercase px-8 py-4 transition-all duration-300 hover:bg-metro-navy hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-metro-navy;
+  }
+
+  .container-metro {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
